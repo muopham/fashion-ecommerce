@@ -1,0 +1,188 @@
+
+.cart{
+    margin-bottom: 30px;
+    &__table{
+        text-align: center;       
+        &__img{
+            width: 10%;
+            height: 100%;
+            overflow: hidden;
+            object-fit: cover;
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &__title{
+            padding-top: 30px !important;
+            width: 40%;
+            p{
+                color: $txt-second-color;
+                font-size: 18px;
+                font-weight: 400;
+
+                @include mobile{
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &__price{
+            padding-top: 30px !important;
+
+            p{
+                font-size: 18px;
+                font-weight: 600;
+
+            }
+        }
+
+        &__quantity{
+            padding-top: 30px !important;
+
+            &__btn{
+                text-align: center;
+                display: inline-block;
+                font-size: 18px;
+                width: 28px;
+                height: 28px;
+                border: 1px solid #ccc;
+
+                &:hover{
+                    cursor: pointer;
+                    background: $main-color;
+                    color: $txt-white;
+                }
+
+                @include mobile{
+                    width: 20px;
+                    height: 20px;
+                    font-size: 14px;
+                }
+            }
+
+            &__input{
+                text-align: center;
+                display: inline-block;
+                font-size: 18px;
+                width: 40px;
+                height: 28px;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+
+                @include mobile{
+                    width: 30px;
+                    height: 20px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &__remove{
+            padding-top: 20px !important;
+            font-size: 28px;
+
+            &:hover{
+                color: $main-color;
+            }
+
+            @include mobile{
+                font-size: 20px;
+            }
+        }
+    }
+
+    &__empty{
+        text-align: center;
+        height: 100%;
+
+        &__icon i{
+            font-size: 140px;
+
+            @include tablet{
+                font-size: 80px;
+            }
+            @include mobile{
+                font-size: 60px;
+            }
+        }
+
+        &__content{
+            p{
+                font-size: 24px;
+                font-weight: 500;
+                color: $txt-second-color;
+
+                @include tablet{
+                    font-size: 18px;
+                }
+            }
+
+            &__btn{
+                outline: none;
+                border: none;
+                font-size: 18px;
+                color: $txt-white;
+                background: $main-color;
+                border: 1px solid $main-color;
+                padding: 10px 20px;
+
+                &:hover{
+                    color: $txt-black;
+                    background: $txt-white;
+                }
+
+                @include mobile{
+                    font-size: 16px;
+                    padding: 6px 10px;
+                }
+                
+            }
+           
+        }
+    }
+
+    &__price{
+        display: flex;
+        justify-content:flex-end;
+        margin-right: 30px;
+        width: 100%;
+        p{
+            font-weight: 600;
+            font-size: 24px;
+
+            @include tablet{
+                font-size: 20px;
+            }
+            @include mobile{
+                font-size: 18px;
+            }
+        }
+    }
+    &__checkout{
+        display: flex;
+        justify-content:space-between;
+        &__btn{
+            text-transform: uppercase;
+            font-size: 14px;
+            color: $txt-white;
+            background: $main-color;
+            border: 1px solid $main-color;
+            padding: 8px 14px;
+            transition:all .3s ease-in;
+
+            @include mobile{
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            &:hover{
+                cursor: pointer;
+                background: $txt-white;
+                color: $txt-black;
+            }
+        }
+    }
+}

@@ -1,0 +1,181 @@
+.slider {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 50px;
+
+    @include tablet{
+        height: 30vh;
+    }
+    @include mobile{
+        height: 20vh;
+    }
+
+    &__control{
+        position: absolute;
+        display: flex;
+        justify-content:space-between;
+        width: 100%;
+        top: 30%;
+        padding: 0 20px;
+        z-index: 12;
+        
+        &__item{
+            display: none;
+            background: #ccc;
+            border-radius: 50%;
+
+            &:hover{
+                background: $main-color;
+                cursor: pointer;
+            }
+            
+            i{
+                font-size: 50px;
+                color: $txt-white;
+
+                @include tablet{
+                    font-size: 34px;
+                }
+                @include mobile{
+                    font-size: 20px;
+                }
+                
+            }
+        }
+    }
+
+    &:hover &__control__item{
+        display: block;
+    }
+    &__item {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+
+        &.active{
+            opacity: 1;
+            visibility: visible;
+            pointer-events: visible;
+        }
+
+        &__info{
+            width: 60%;
+            left: 10%;
+            top: 30%;
+            position: absolute;
+            text-align: center;
+            z-index: 10;
+
+            @include tablet{
+                left: 5%;
+                top: 10%;              
+            }
+            @include mobile{
+                left: 5%;
+                top: 5%;              
+            }
+
+            &__subtitle{
+                span{
+                    color: $txt-second-color;
+                    font-size: 26px;
+                    letter-spacing: 5px;
+                    font-weight: 500;
+                    overflow: hidden;
+
+                    @include mobile{
+                        font-size: 13px;              
+                    }
+                }
+
+            }
+
+            &__title{
+                margin-top: 8px;
+                margin-bottom: 20px;   
+                
+                @include mobile{
+                    margin-bottom: 10px;
+                }
+                h1{
+                    font-size: 60px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+
+                    @include tablet{
+                        font-size: 26px;              
+                    }
+                    @include mobile{
+                        font-size: 20px;              
+                    }
+                }
+            }
+
+            &__btn{                   
+                a{                    
+                    padding: 13px 29px;
+                    border: 2px solid $main-color;
+                    background: $main-color;
+                    letter-spacing: .05em;
+                    color: $txt-white;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    transition: 0.3s ease-in;
+                    @include tablet{
+                        padding: 6px 10px;   
+                        letter-spacing: 0;
+                    }
+                    @include mobile{
+                        padding: 4px 7px;   
+                        letter-spacing: 0;
+                    }
+                    
+                    &:hover{
+                        background: $txt-white;
+                        color: $txt-black;
+                    }
+                }
+            }
+
+            &__title > h1,
+            &__description > span,
+            &__subtitle > span,
+            &__btn{
+                display: block;
+                transform: translateY(-100%);
+                transition: transform 0.5s ease;
+            }
+        }
+
+        &.active &__info {
+            &__title > h1,
+            &__description > span,
+            &__subtitle > span,
+            &__btn {
+                transform: translateY(0);
+            }
+        }
+
+        &__img{
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            object-position: center;
+            img{
+                width: 100%;
+                height: 100vh;
+
+                @include tablet{
+                    height: auto;
+                }
+                @include mobile{
+                    height: auto;
+                }
+            }           
+        }
+    }
+}
