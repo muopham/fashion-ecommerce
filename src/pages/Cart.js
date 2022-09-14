@@ -54,7 +54,7 @@ const Cart = () => {
                 <i className="bx bx-cart"></i>
               </div>
               <div className="cart__empty__content">
-                <p>Your Cart is Empty</p>
+                <p>Your cart is empty !</p>
                 <Link to="/catalog" className="cart__empty__content__btn">
                   Shop now
                 </Link>

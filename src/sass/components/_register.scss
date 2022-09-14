@@ -1,0 +1,65 @@
+.register{
+    margin-bottom: 50px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+    }
+    &__title{
+        font-size: 26px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    &__form{
+        width: 50%;
+        border: 1px solid #ccc;
+        padding: 50px 80px;
+
+        @include tablet{
+            padding: 30px 40px;
+        }
+
+        @include mobile{
+            width: 100%;
+            padding: 30px;
+        }
+        &__item{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            label{
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 4px;
+            }
+            input{
+                font-size: 14px;
+                border: 1px solid #ccc;
+                padding: 8px 16px;
+            }
+            p{
+                margin: 0;
+            }
+        }
+
+        &__error{
+            color: $main-color;
+            font-size: 13px;
+        }
+
+        button{
+            outline: none;
+            text-transform: uppercase;
+            padding: 8px 10px;
+            background: $main-color;
+            color:$txt-white;
+            border: 1px solid $main-color;
+        }
+    }
+    &__creat{
+        margin-top: 20px;
+    }
+}

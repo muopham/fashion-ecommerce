@@ -11,7 +11,6 @@ import { cartTotalPriceSelector } from "../redux/selector";
 const Checkout = () => {
   const dispatch = useDispatch();
   const cartItem = useSelector((state) => state.cart);
-  const order = useSelector((state) => state.order);
   const cartTotalPrice = useSelector(cartTotalPriceSelector);
 
   const initial = {
@@ -28,7 +27,6 @@ const Checkout = () => {
       values,
       totalPrice: cartTotalPrice,
     };
-    console.log(temp);
     if (dispatch(add(temp))) {
       dispatch(clear());
       setValues(initial);
@@ -40,7 +38,6 @@ const Checkout = () => {
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
-  console.log(order);
   return (
     <Helmet title="Checkout">
       <ToastContainer />
@@ -132,6 +129,10 @@ const Checkout = () => {
                       <td>${item.price}</td>
                     </tr>
                   ))}
+                  <tr>
+                    <td>Transport fee:</td>
+                    <td>$0</td>
+                  </tr>
                   <tr>
                     <td>Total:</td>
                     <td className="cart__order__table__total">

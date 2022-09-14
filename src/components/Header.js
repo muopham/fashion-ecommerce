@@ -24,6 +24,7 @@ const Header = () => {
 
   const path = useLocation().pathname;
   const cart = useSelector((state) => state.cart);
+  const username = useSelector((state) => state.user.name);
 
   const activeNav = mainNav.findIndex((e) => e.path === path);
 
@@ -51,18 +52,36 @@ const Header = () => {
         <div className="container">
           <div className="header__top__left">Welcome to Out Store</div>
           <div className="header__top__right">
-            <div className="header__top__right__item">
-              <Link to="#">
-                <i className="bx bx-heart"></i>
-                <span>Wishlist</span>
-              </Link>
-            </div>
-            <div className="header__top__right__item">
-              <Link to="/login">
-                <i className="bx bx-user"></i>
-                <span>Login</span>
-              </Link>
-            </div>
+            {username ? (
+              <>
+                <div className="header__top__right__item">
+                  <Link to="/profile">
+                    <span>{username}</span>
+                  </Link>
+                </div>
+                <div className="header__top__right__item">
+                  <Link to="/login">
+                    <i className="bx bx-log-in-circle"></i>
+                    <span>Logout</span>
+                  </Link>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="header__top__right__item">
+                  <Link to="#">
+                    <i className="bx bx-heart"></i>
+                    <span>Wishlist</span>
+                  </Link>
+                </div>
+                <div className="header__top__right__item">
+                  <Link to="/login">
+                    <i className="bx bx-user"></i>
+                    <span>Login</span>
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

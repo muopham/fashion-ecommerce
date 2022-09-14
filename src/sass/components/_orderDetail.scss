@@ -1,0 +1,47 @@
+.detail-order{
+    margin-bottom: 50px;
+    @include tablet{
+        padding: 0 30px;
+    }
+    @include mobile{
+        padding: 0 10px;
+
+    }
+    &__title{
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 30px;
+
+        @include mobile{
+            font-size: 20px;
+            margin-bottom: 20px;
+    
+        }
+    }
+
+    &__content{
+        &__item{
+            display: flex;
+            font-size: 20px;
+            // gap: 20px;
+
+            @include tablet{
+                font-size: 16px;
+            }
+            &__title{
+                width: 15%;
+                @include tablet{
+                    width: 30%;
+                }
+                
+            }
+            span{
+                flex:1; 
+            }
+        }
+    }
+
+    &__table{
+        font-size: 18px;
+    }
+}

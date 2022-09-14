@@ -62,8 +62,14 @@
             }
 
             &__total{
-                color: $main-color;
+                color: $main-color !important;
             }
+        }
+
+        &__btn{
+            padding: 5px 10px;
+            background: $main-color;
+            color: $txt-white !important;
         }
     }
 }

@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import productData from "../assets/fake-data/products";
 import Helmet from "../components/Helmet";
 import Breadcrumb from "../components/BreadCrumb";
 import ProductView from "../components/ProductView";
-import Section, { SectionBody, SectionTitle } from "../components/Section";
+import Section, { SectionTitle } from "../components/Section";
 import { Row } from "reactstrap";
 import ProductCard from "../components/ProductCard";
 const Product = () => {
