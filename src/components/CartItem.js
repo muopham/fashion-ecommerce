@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { update, remove } from "../redux/cartSlice";
-import "react-toastify/dist/ReactToastify.css";
+
 const CartItem = (props) => {
   const dispatch = useDispatch();
 
-  console.log(props.data);
   const [product, setProduct] = useState(props.data);
   const [quantity, setQuantity] = useState(props.data.quantity);
 

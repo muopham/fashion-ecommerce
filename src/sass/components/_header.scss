@@ -48,15 +48,16 @@
             @include tablet{
                 gap: 15px;
             }
-
             a{
                 display: flex;
                 justify-content:center;
                 align-items: center;
+                font-size: 15px;
                 gap: 4px;
 
                 @include tablet{
                     gap: 2px;
+                    font-size: 16px;
                 }
             }
         }

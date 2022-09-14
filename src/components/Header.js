@@ -51,14 +51,14 @@ const Header = () => {
         <div className="container">
           <div className="header__top__left">Welcome to Out Store</div>
           <div className="header__top__right">
-            <div className="header__top__right__wishlist">
+            <div className="header__top__right__item">
               <Link to="#">
                 <i className="bx bx-heart"></i>
                 <span>Wishlist</span>
               </Link>
             </div>
-            <div className="header__top__right__login">
-              <Link to="#">
+            <div className="header__top__right__item">
+              <Link to="/login">
                 <i className="bx bx-user"></i>
                 <span>Login</span>
               </Link>

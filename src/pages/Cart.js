@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Table } from "reactstrap";
@@ -6,19 +6,12 @@ import { ToastContainer } from "react-toastify";
 import Helmet from "../components/Helmet";
 import Breadcrumb from "../components/BreadCrumb";
 import CartItem from "../components/CartItem";
+import { cartTotalPriceSelector } from "../redux/selector";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const totalPrice = useSelector(cartTotalPriceSelector);
 
-  useEffect(() => {
-    setTotalPrice(
-      products.reduce(
-        (total, item) => total + Number(item.quantity) * Number(item.price),
-        0
-      )
-    );
-  }, [products]);
   return (
     <Helmet title="Cart">
       <ToastContainer />

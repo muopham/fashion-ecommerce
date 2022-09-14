@@ -56,7 +56,7 @@ const cartSlice = createSlice({
         return item;
       });
     },
-    remove(state, action) {
+    remove: (state, action) => {
       const newItem = action.payload;
       return (state = state.filter(
         (e) =>
@@ -65,8 +65,12 @@ const cartSlice = createSlice({
           e.color !== newItem.color
       ));
     },
+
+    clear: (state) => {
+      return (state = []);
+    },
   },
 });
 
-export const { add, update, remove } = cartSlice.actions;
+export const { add, update, remove, clear } = cartSlice.actions;
 export default cartSlice.reducer;
