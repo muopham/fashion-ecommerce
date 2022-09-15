@@ -71,7 +71,7 @@ const Catalog = () => {
       item.title.toLowerCase().includes(search)
     );
     setProducts(searchFilter);
-  }, [search]);
+  }, [search, productList]);
 
   const filterRef = useRef(null);
   const showHideFilter = () => filterRef.current.classList.toggle("active");

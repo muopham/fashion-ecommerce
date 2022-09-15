@@ -20,7 +20,7 @@ const Register = () => {
     validationSchema: Yup.object({
       name: Yup.string().min(4, "Must be 4 characters or more"),
       email: Yup.string().matches(
-        /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+        /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
         "Please enter a valid email address"
       ),
       password: Yup.string().matches(
